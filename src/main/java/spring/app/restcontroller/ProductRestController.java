@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("ap1/v1/product")
+@RequestMapping("ap1/v1/products")
 public class ProductRestController {
     @Autowired
     private  ProductService productService;

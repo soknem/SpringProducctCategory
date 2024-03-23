@@ -32,6 +32,13 @@ public class ProductRepository {
                 .price(3.4f)
                 .imageUrl("productimagethree.jpg")
                 .build());
+        add(Product.builder()
+                .id(4)
+                .title("product title three ")
+                .description("this is the product one description")
+                .price(3.4f)
+                .imageUrl("productimagethree.jpg")
+                .build());
     }};
 
     public void addAllproduct(Product product){
@@ -41,13 +48,8 @@ public class ProductRepository {
         return allProducts;
     }
     public void updateProduct(Product product){
-        int index =   allProducts.indexOf(
-                allProducts.stream()
-                        .filter(pro->pro.getId()==product.getId())
-                        .findFirst()
-                        .orElse(null)
-        ) ;
-
+        int index=allProducts.indexOf(allProducts.stream().
+                filter(findproduct->findproduct.getId()==product.getId()).findFirst().orElse(null));
         allProducts.set(index,product);
     }
     public void deleteProduct(int id){

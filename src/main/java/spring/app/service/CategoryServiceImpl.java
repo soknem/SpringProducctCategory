@@ -52,6 +52,7 @@ public class CategoryServiceImpl implements CategoryService{
         var maxId=categoryRepository.getAllCategory().stream().max(Comparator.comparingInt(Category::getId)).map(Category::getId);
         int newId= maxId.map(integer -> (integer + 1)).orElse(1);
         Category category=Category.builder().id(newId).title(categoryRequest.title()).description(categoryRequest.title()).build();
+        categoryRepository.addCaetegory(category);
         return mapCategoryToResponse(category);
     }
 

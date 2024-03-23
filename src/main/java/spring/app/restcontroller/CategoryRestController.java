@@ -41,6 +41,7 @@ public class CategoryRestController {
     }
     @DeleteMapping("/{id}")
     public Map<String,Object> deleteCategory(@PathVariable int id){
+        categoryService.deleteProductById(id);
         return createResponse(new ArrayList<>(),"DELETE CATEGORY SUCCESSFULLY",HttpStatus.OK.value());
     }
 }
